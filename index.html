@@ -1,100 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
-    integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/style/main.css">
-  <link rel="stylesheet" href="assets/style/style.css">
-  <title>Trivia</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon"
+      href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
+      integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>Trivia</title>
+  </head>
+  <style>
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }
 
-<body>
-  <header class="elevation-5">
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }
 
-    </nav>
-  </header>
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="mt-2 col-md-2">
-            <span class=" "> <button class="btn btn-primary one 
-          " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-                aria-controls="offcanvasExample">
-                Categories:
-              </button></span>
-          </div>
+  body.debug [class*="col-"] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+</style>
+  <body class="">
+    <header class="elevation-5">
+      <nav class="navbar navbar-dark navbar-expand bg-dark text-light
+        no-select">
 
-        </div>
-        <div class="col-12 d-flex justify-content-center">
-
-
-
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- ------------------------ -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header bg-dark text-light elevation-5"">
-      <h5 class=" offcanvas-title id="offcanvasExampleLabel">Pick a Category!</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body bg-info text-light">
+      </nav>
+    </header>
+    <main>
       <div class="container-fluid">
+        <div class="row">
+          <!-- <div class="col-12">
+            <div class="mt-2 col-md-2">
+              <span class=" "> <button class="btn btn-primary one
+                  " type="button" data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasExample"
+                  aria-controls="offcanvasExample">
+                  Categories:
+                </button>
+              </span>
 
-        <ul class="list-group ">
-          <li class="list-group-item ">A first item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-          <li class="list-group-item">A fourth item</li>
-          <li class="list-group-item">And a fifth one
+            </div>
+
+          </div> -->
+          <div class="container-fluid d-flex justify-content-center">
+
+            <div class="row justify-content-center" id="api-questions">
+
+
+            </div>
 
 
 
-          </li>
-        </ul>
 
-
+          </div>
+        </div>
       </div>
-      <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
+
+
+
+    </main>
+
+    <!-- ------------------------ -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header bg-dark text-light elevation-5"">
+        <h5 class=" offcanvas-title id="offcanvasExampleLabel">Pick a Category!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+          aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body CC1 text-light">
+        <div class="container-fluid">
+
+          <ul class="list-group ">
+            <li class="list-group-item "></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+          </ul>
+
+        </div>
+        <div class="dropdown mt-3">
+          <button class="btn btn-secondary dropdown-toggle" type="button"
+            data-bs-toggle="dropdown">
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- ------------------------------------- -->
-  <footer class="bg-dark text-light">
+    <!-- ------------------------------------- -->
+    <!-- <footer class="bg-primary text-light">
 
+      <div class="text-center no-select">
+        <p><small>Made with 💖 by CodeWorks</small></p>
+      </div>
+    </footer> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
-
-    <div class="text-center no-select">
-      <p><small>Made with 💖 by CodeWorks</small></p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
-    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
-  <script src="app/App.js" type="module"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+      integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc="
+      crossorigin="anonymous"></script>
+    <script src="app/App.js" type="module"></script>
+  </body>
 
 </html>
